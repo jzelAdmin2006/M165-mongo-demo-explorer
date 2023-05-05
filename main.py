@@ -42,11 +42,10 @@ def ask_user_for_document_selection():
             print("This is an invalid ID, try again...")
 
 
+connectionString = "mongodb://localhost:27017/"
+client = MongoClient(connectionString)
+dbs = client.list_database_names()
 while True:
-    connectionString = "mongodb://localhost:27017/"
-    client = MongoClient(connectionString)
-
-    dbs = client.list_database_names()
     print("Databases:")
     for db in dbs:
         print("- " + db)
